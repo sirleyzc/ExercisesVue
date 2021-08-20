@@ -1,18 +1,20 @@
 var app = new Vue({
     el: "#app",
     data: {
-        num: null,
-        rta: null
+        price1: 50,
+        price2: 30,
+        total: 0,
+        amount: 0
     },
 
     methods: {
-        dcto(){
-            if (this.num >= 50){
-                this.rta = this.num * 30;
+        calculateTotal(){
+            if (this.amount > 50) {
+                this.total = this.price2 * this.amount;
             } else {
-                this.rta = this.num * 50;
+                this.total = this.price1 * this.amount;
             }
         }
 
-    },
-})
+    }
+});

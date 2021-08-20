@@ -16,11 +16,11 @@
             <br>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">Número de copias</span>
-                <input v-model.number="num" type="number" class="form-control" placeholder="Ingrese el número de hojas a fotocopiar">
+                <input v-model.number="amount" type="number" class="form-control" placeholder="Ingrese el número de hojas a fotocopiar">
             </div>
-            <button @click="dcto" type="button" class="btn btn-warning">Valor a pagar</button>
+            <button @click="calculateTotal" type="button" class="btn btn-warning">Valor a pagar</button>
             <br>
-            <h3 v-text="rta"></h3>
+            <h3 v-text="total"></h3>
         </div>
     </div>
     
