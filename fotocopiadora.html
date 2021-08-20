@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotocopiadora</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="container">
+            <h3>Fotocopiadora</h3>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Número de copias</span>
+                <input v-model.number="num" type="number" class="form-control" placeholder="Ingrese el número de hojas a fotocopiar">
+            </div>
+            <button @click="dcto" type="button" class="btn btn-warning">Valor a pagar</button>
+            <br>
+            <h3 v-text="rta"></h3>
+        </div>
+    </div>
+    
+</body>
+<script src="js/vue.js"></script>
+<script src="js/fotocopiadora.js"></script>
+</html>
