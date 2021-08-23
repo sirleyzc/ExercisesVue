@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h2>Supermercado</h2>
+            <br>
+            <select v-model="option" class="form-select" aria-label="Default select example">
+                <option value="0" selected>Seleccione el producto que desea comprar</option>
+                <option value="1">Pera</option>
+                <option value="2">Piña</option>
+            </select>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Cantidad</span>
+                <input v-model.number="amount" type="number" class="form-control" placeholder="Ingrese la cantidad de fruta que desea comprar">
+              </div>
+            <button @click="calculatePrice" type="button" class="btn btn-primary">Agregar</button>
+            <button @click="totalPay" type="button" class="btn btn-dark">Pagar</button>
+            <br>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text">Subtotal</span>
+                <span v-text="total" class="form-control">
+            </div>
+            <br>
+            <div v-show="isPay" class="input-group mb-3">
+                <span class="input-group-text">Total</span>
+                <span v-text="tPay" class="form-control">
+            </div>
+            <br>
+            <div v-show="isPay" class="input-group mb-3">
+                <span class="input-group-text">Efectivo</span>
+                <input v-model="tCash" type="text" class="form-control" placeholder="Ingrese el efectivo">
+            </div>
+            
+            <button @click="cash" type="button" class="btn btn-danger">Finalizar compra</button>
+        </div>
+    </div>
+    
+</body>
+<script src="js/vue.js"></script>
+<script src="js/supermercado.js"></script>
+</html>
