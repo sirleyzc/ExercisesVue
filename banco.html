@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <br>
+            <h3>Generación de créditos de un banco</h3>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Valor del préstamo</span>
+                <span class="input-group-text">$</span>
+                <input v-model.number="value" type="number" class="form-control" placeholder="Indique el valor que desea solicitar prestado" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Cuotas</span>
+                <input v-model.number="num" type="number" class="form-control" placeholder="Indique el número de cuotas" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01">Línea de crédito</label>
+                <select v-model.number="opt" class="form-select" id="inputGroupSelect01">
+                  <option value="0" selected>Indique la línea de crédito que desea solicitar</option>
+                  <option value="1">Libre inversión</option>
+                  <option value="2">Libranza</option>
+                </select>
+            </div>
+
+            <button @click="creditLine" type="button" class="btn btn-success">Solicitar crédito</button>
+            <button @click="calculateFee" type="button" class="btn btn-success">Total a Pagar</button>
+            <br>
+            <br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Valor intereses</span>
+                <span v-text="interest" type="number" class="form-control"></span>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Valor crédito</span>
+                <span v-text="credit" class="form-control"></span>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Valor descuento</span>
+                <span v-text="dcto" class="form-control"></span>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Total a pagar</span>
+                <span v-text="totalCredit" class="form-control"></span>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default">Valor cuotas</span>
+                <span v-text="fee" class="form-control"></span>
+            </div>          
+
+        </div>
+    </div>
+    
+</body>
+
+<script src="js/vue.js"></script>
+<script src="js/banco.js"></script>
